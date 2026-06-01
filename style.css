@@ -1,0 +1,49 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: darkblue;
+}
+.products{
+    display: flex;
+    gap: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: black;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.products-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    border-radius: 10px;
+    border-color: black;
+}
+.products-card:hover{
+    transform: scale(1.05);
+}
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+button{
+    background-color:black;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    cursor:pointer;
+}
