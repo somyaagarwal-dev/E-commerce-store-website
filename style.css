@@ -1,49 +1,115 @@
 body {
-    background-color: lightblue;
-}
-
-h1 {
-    color: darkblue;
-}
-.products{
-    display: flex;
-    gap: 20px;
-}
-
-body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
+/* Header */
+header {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navbar */
 nav {
-    background-color: black;
-    padding: 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
-.products-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    width: 220px;
+nav a:hover {
+    color: orange;
+}
+
+/* Hero Section */
+section:first-of-type {
     text-align: center;
+    padding: 40px;
+    background-color: white;
+}
+
+/* Product Section */
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Product Cards */
+.products article {
+    background-color: white;
+    width: 250px;
     border-radius: 10px;
-    border-color: black;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
 }
-.products-card:hover{
-    transform: scale(1.05);
+
+.products article:hover {
+    transform: translateY(-5px);
 }
+
+.products img {
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Buttons */
 button {
-    padding: 8px 12px;
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
     cursor: pointer;
 }
-button{
-    background-color:black;
-    color:white;
-    border:none;
-    padding:8px 12px;
-    cursor:pointer;
+
+button:hover {
+    background-color: orange;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+section h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+.hero {
+    background: linear-gradient(135deg, #111, #333);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
 }

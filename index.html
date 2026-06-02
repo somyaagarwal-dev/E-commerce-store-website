@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
   
-    <title>ShopEase</title>
+    <title>Shop Ease</title>
 </head>
 <body>
     <!-- Header -->
@@ -19,45 +19,51 @@
             <a href="login.html">Login</a>
             <a href="Register.html">Register</a>
               <p>Cart Items: <span id="cart-count">0</span></p>
-              <script src="script.js"></script>
+              
         </nav>
      </Header>
      <hr>
      <!-- Hero Section-->
-      <section>
-        <h2>Welcome to Shop</h2>
-        <P>Find the best products at affordable prices</P>
-         </section>
+      <section class="hero">
+    <h2>Welcome to ShopEase</h2>
+    <p>Find the best tech products at affordable prices</p>
+</section>
          <hr>
          <!--Product listings-->
          <section>
             <h2>Featured Products</h2>
             <div class="products">
-            <article>
-                <img src="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D" height="200" width="200" alt="Product 1">
+            <article class="products-card">
+                <img src="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D" alt="Product 1">
                 <h3>Wireless Headphones</h3>
                 <p>Price:₹1999 </p>
-              <button onclick="addToCart()">Add to Cart</button>
+              <button onclick="addToCart('Wireless Headphones')">
+    Add to Cart
+</button>
                 <a href="headphones.html">
                 <button>View Details</button></a>
             </article>
-<br>
-        <article>
-            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D" width="200" height="200" alt="Product 2">
+
+        <article class="products-card">
+            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D" alt="Product 2">
             <h3>Smart Watch</h3>
             <p>Price: ₹2999</p>
-            <button>Add to Cart</button>
+       <button onclick="addToCart('Smart Watch')">
+    Add to Cart
+</button>
             <a href="smartwatch.html">
             <button>View Details</button></a>
         </article>
 
-        <br>
+        
 
-        <article>
-            <img src="https://images.unsplash.com/photo-1529359744902-86b2ab9edaea?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZXRvb3RoJTIwc3BlYWtlcnxlbnwwfHwwfHx8MA%3D%3D" width="200" height="200" alt="Product 3">
+        <article class="products-card">
+            <img src="https://images.unsplash.com/photo-1529359744902-86b2ab9edaea?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZXRvb3RoJTIwc3BlYWtlcnxlbnwwfHwwfHx8MA%3D%3D" alt="Product 3">
             <h3>Bluetooth Speaker</h3>
             <p>Price: ₹1499</p>
-            <button>Add to Cart</button>
+          <button onclick="addToCart('Bluetooth Speaker')">
+    Add to Cart
+</button>
     <a href="bluetoothspeaker.html">        
     <button>View Details</button></a>
 
@@ -73,7 +79,8 @@
           </section>
           <hr>
           <footer>
-            <P> &copy; 2026Shop with us. All Rights Reserved </P>
+            <P> &copy; 2026Shop Ease. All Rights Reserved </P>
           </footer>
+          <script src="script.js"></script>
 </body>
 </html>

@@ -1,8 +1,13 @@
-let count = 0;
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart() {
-    count++;
-    alert("Count = " + count);
+document.getElementById("cart-count").innerText = cart.length;
 
-    document.getElementById("cart-count").innerText = count;
+function addToCart(productName) {
+    cart.push(productName);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    document.getElementById("cart-count").innerText = cart.length;
+
+    alert(productName + " added to cart!");
 }
