@@ -3,6 +3,13 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let cartItems = document.getElementById("cart-items");
 
 let totalPrice = 0;
+if(cart.length === 0){
+    cartItems.innerHTML = `
+        <tr>
+            <td colspan="3">Your cart is empty 😢</td>
+        </tr>
+    `;
+}
 
 cart.forEach((product, index) => {
     let row = document.createElement("tr");

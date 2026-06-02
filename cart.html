@@ -1,23 +1,42 @@
-<h2>Shopping Cart</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - ShopEase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<table border="1">
-    <tr>
-    <th>Product</th>
-    <th>Price</th>
-    <th>Action</th>
-</tr>
+<div class="cart-container">
 
-    <tbody id="cart-items">
+    <h2>Shopping Cart</h2>
 
-    </tbody>
-</table>
+    <table class="cart-table">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
 
-<p>Total Items: <span id="total-items">0</span></p>
+        <tbody id="cart-items">
 
-<p>Total Price: ₹<span id="total-price">0</span></p>
+        </tbody>
+    </table>
 
-<a href="checkout.html">
-    <button>Proceed to Checkout</button>
-</a>
+    <div class="cart-summary">
+        <p>Total Items: <span id="total-items">0</span></p>
+
+        <p>Total Price: ₹<span id="total-price">0</span></p>
+
+        <a href="checkout.html">
+            <button>Proceed to Checkout</button>
+        </a>
+    </div>
+
+</div>
 
 <script src="cart.js"></script>
+
+</body>
+</html>
