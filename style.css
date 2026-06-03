@@ -15,18 +15,26 @@ header {
 
 /* Navbar */
 nav {
-    margin-top: 10px;
+    background-color: black;
+    padding: 15px;
+
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 15px;
+
     flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
+}
+
+nav p {
+    color: white;
+    margin: 0;
 }
 
 nav a:hover {

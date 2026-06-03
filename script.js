@@ -19,6 +19,5 @@ function addToCart(productName, price) {
    if (cartCount) {
     cartCount.innerText = cart.length;
 }
-
-    alert(productName + " added to cart!");
+console.log(productName + " added to cart!");
 }
