@@ -1,6 +1,10 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-document.getElementById("cart-count").innerText = cart.length;
+let cartCount = document.getElementById("cart-count");
+
+if (cartCount) {
+    cartCount.innerText = cart.length;
+}
 
 function addToCart(productName, price) {
     let product = {
@@ -12,7 +16,9 @@ function addToCart(productName, price) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    document.getElementById("cart-count").innerText = cart.length;
+   if (cartCount) {
+    cartCount.innerText = cart.length;
+}
 
     alert(productName + " added to cart!");
 }
