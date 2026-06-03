@@ -21,3 +21,37 @@ document
     window.location.href = "index.html";
 
 });
+document.getElementById("checkout-form").addEventListener("submit", function(event){
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let address = document.getElementById("address").value.trim();
+
+    if(name === ""){
+        alert("Please enter your name");
+        event.preventDefault();
+        return;
+    }
+
+    if(email === ""){
+        alert("Please enter your email");
+        event.preventDefault();
+        return;
+    }
+
+    if(phone.length !== 10){
+        alert("Phone number must be 10 digits");
+        event.preventDefault();
+        return;
+    }
+
+    if(address === ""){
+        alert("Please enter your address");
+        event.preventDefault();
+        return;
+    }
+
+    alert("Order placed successfully! 🎉");
+
+});

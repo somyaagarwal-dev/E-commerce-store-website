@@ -24,15 +24,15 @@
      <hr>
 <div class="form-container">
 
-    <form class="auth-form">
+    <form class="auth-form" onsubmit="return validateLogin()">
 
         <h2>Login</h2>
 
         <label>Email</label>
-        <input type="email" required>
+        <input type="email" id="email" required>
 
         <label>Password</label>
-        <input type="password" required>
+        <input type="password" id="password" required>
 
         <button type="submit">Login</button>
 
@@ -43,6 +43,6 @@
     </form>
 
 </div>
-
+<script src="login.js"></script>
 </body>
 </html>
