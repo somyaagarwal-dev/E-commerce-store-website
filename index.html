@@ -27,6 +27,28 @@
     <h2>Welcome to ShopEase</h2>
     <p>Find the best tech products at affordable prices</p>
 </section>
+<section class="search-section">
+
+    <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            onkeyup="searchProducts()">
+
+        <button onclick="startVoiceSearch()">🎤</button>
+
+    </div>
+
+    <p id="no-results" style="display:none;">
+        No products found 😢
+    </p>
+
+</section>
+
          <hr>
          <!--Product listings-->
          <section>
