@@ -53,94 +53,56 @@
          <!--Product listings-->
          <section>
             <h2>Featured Products</h2>
-            <div class="products">
-            <article class="products-card">
-                <img src="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D" alt="Product 1">
-                <h3>Wireless Headphones</h3>
-                <p>Price:₹1999 </p>
-              <button onclick="addToCart('Wireless Headphones',1999)">
-    Add to Cart
-</button>
-                <a href="headphones.html">
-                <button>View Details</button></a>
-            </article>
-
-        <article class="products-card">
-            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D" alt="Product 2">
-            <h3>Smart Watch</h3>
-            <p>Price: ₹2999</p>
-       <button onclick="addToCart('Smart Watch',2999)">
-    Add to Cart
-</button>
-            <a href="smartwatch.html">
-            <button>View Details</button></a>
-        </article>
-
-        
-
-        <article class="products-card">
-            <img src="https://images.unsplash.com/photo-1529359744902-86b2ab9edaea?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZXRvb3RoJTIwc3BlYWtlcnxlbnwwfHwwfHx8MA%3D%3D" alt="Product 3">
-            <h3>Bluetooth Speaker</h3>
-            <p>Price: ₹1499</p>
-          <button onclick="addToCart('Bluetooth Speaker',1499)">
-    Add to Cart
-</button>
-    <a href="bluetoothspeaker.html">        
-    <button>View Details</button></a>
-    
-        </article>
-        <article class="products-card">
-    <img src="https://images.unsplash.com/photo-1631749352438-7d576312185d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdpcmVsZXNzJTIwbW91c2V8ZW58MHx8MHx8fDA%3D" alt="Wireless Mouse">
-
-    <h3>Wireless Mouse</h3>
-
-    <p>Price: ₹999</p>
-
-    <button onclick="addToCart('Wireless Mouse', 999)">
-        Add to Cart
-    </button>
-
-    <a href="mouse.html">
-        <button>View Details</button>
-    </a>
-</article>
-<article class="products-card">
-    <img src="https://plus.unsplash.com/premium_photo-1664194583917-b0ba07c4ce2a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVjaGFuaWNhbCUyMGtleWJvYXJkfGVufDB8fDB8fHww" alt="Mechanical Keyboard">
-
-    <h3>Mechanical Keyboard</h3>
-
-    <p>Price: ₹2499</p>
-
-    <button onclick="addToCart('Mechanical Keyboard', 2499)">
-        Add to Cart
-    </button>
-
-    <a href="keyboard.html">
-        <button>View Details</button>
-    </a>
-</article> 
-<article class="products-card">
-    <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGdhbWluZyUyMG1vbml0b3J8ZW58MHx8MHx8fDA%3D" alt="Gaming Monitor">
-
-    <h3>Gaming Monitor</h3>
-
-    <p>Price: ₹14999</p>
-
-    <button onclick="addToCart('Gaming Monitor', 14999)">
-        Add to Cart
-    </button>
-
-    <a href="monitor.html">
-        <button>View Details</button>
-    </a>
-</article>
-        </div>
+            <div class="products" id="products-container">
+</div>
          </section>
          
           <hr>
           <footer>
             <P> &copy; 2026Shop Ease. All Rights Reserved </P>
           </footer>
+          <script>
+
+fetch("http://localhost:3000/products")
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
+
+    });
+
+</script>
+<script>
+
+fetch("http://localhost:3000/products")
+    .then(response => response.json())
+    .then(data => {
+
+        let container =
+            document.getElementById("products-container");
+
+        data.forEach(product => {
+
+            container.innerHTML += `
+                <article class="products-card">
+
+                    <img src="${product.image}" alt="${product.name}">
+
+                    <h3>${product.name}</h3>
+
+                    <p>Price: ₹${product.price}</p>
+
+                    <a href="${product.detailsPage}">
+                        <button>View Details</button>
+                    </a>
+
+                </article>
+            `;
+        });
+
+    });
+
+</script>
           <script src="script.js"></script>
 </body>
 </html>

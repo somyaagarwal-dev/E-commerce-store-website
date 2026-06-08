@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch Test</title>
+</head>
+<body>
+
+<h2>Products</h2>
+
+<button onclick="getProducts()">
+    Load Products
+</button>
+<div id="products"></div>
+<script>
+
+function getProducts() {
+
+    fetch("http://localhost:3000/products")
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            let productsDiv =
+    document.getElementById("products");
+
+data.forEach(product => {
+
+    productsDiv.innerHTML += `
+        <p>
+            ${product.name} - ₹${product.price}
+        </p>
+    `;
+
+});
+
+        });
+
+}
+
+</script>
+
+</body>
+</html>
