@@ -2,8 +2,9 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-
+const users = [];
 app.use(cors());
+app.use(express.json());
 
 app.get("/products", (req, res) => {
 const products = [
@@ -46,6 +47,54 @@ const products = [
 ];
 
     res.json(products);
+});
+app.post("/register", (req, res) => {
+
+
+const { email } = req.body;
+
+const existingUser = users.find(
+    user => user.email === email
+);
+
+if (existingUser) {
+    return res.json({
+        message: "User already registered!"
+    });
+}
+
+users.push(req.body);
+
+console.log(users);
+
+res.json({
+    message: "Registration Successful!"
+});
+
+
+});
+
+
+app.post("/login", (req, res) => {
+
+const { email, password } = req.body;
+
+const user = users.find(u =>
+    u.email === email &&
+    u.password === password
+);
+
+if (user) {
+    res.json({
+        message: "Login Successful!"
+    });
+} else {
+    res.json({
+        message: "Invalid Email or Password"
+    });
+}
+
+
 });
 
 app.listen(3000, () => {

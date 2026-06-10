@@ -322,14 +322,21 @@ section h2 {
     box-shadow:0 2px 8px rgba(0,0,0,0.15);
 }
 
-.search-box input{
-    border:none;
-    outline:none;
-    width:250px;
-    font-size:16px;
+.search-section input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
 }
 
-.search-box button{
-    padding:8px 12px;
+.search-box{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:white;
+    padding:10px 15px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
 }
 }
