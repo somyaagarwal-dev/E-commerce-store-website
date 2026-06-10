@@ -8,19 +8,40 @@ cart.forEach(product => {
 
 document.getElementById("checkout-total").innerText = totalPrice;
 
-document
-.getElementById("checkout-form")
+document.getElementById("checkout-form")
 .addEventListener("submit", function(event){
 
-    event.preventDefault();
 
-    alert("Order placed successfully!");
+event.preventDefault();
+
+let name = document.getElementById("name").value.trim();
+let address = document.getElementById("address").value.trim();
+
+fetch("http://localhost:3000/checkout", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name: name,
+        address: address,
+        totalAmount: totalPrice
+    })
+})
+.then(response => response.json())
+.then(data => {
+
+    alert(data.message);
 
     localStorage.removeItem("cart");
 
     window.location.href = "index.html";
 
 });
+
+
+});
+
 document.getElementById("checkout-form").addEventListener("submit", function(event){
 
     let name = document.getElementById("name").value.trim();
